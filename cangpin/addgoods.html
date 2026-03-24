@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>添加藏品</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="css/addgoods.css">
+ </head>
+ <body>
+   <div class="container ">
+    <div class="container1 bgf5f8fa">
+	  
+	 <div class="ibox-title-2">
+      <label class="fs28 col8">请输入藏品的相关信息</label>
+     </div>
+	 <div>
+     <form>
+	   <div class="ibox-content bgf mb36">
+         <label class="icon-name fs34">藏品名称</label>
+          <input placeholder="请输入藏品名称" name="goodsName" maxlength="50" placeholder-class="placeholder-input"/>
+       </div>
+       <div class="ibox-content bgf" style="border-bottom:1px #ccc solid">
+         <label class="icon-name fs34">编号</label>
+         <input placeholder="请输入藏品编号" name="goodsNum" maxlength="50" placeholder-class="placeholder-input"/>
+       </div>
+
+	   <div class="ibox-content bgf " style="border-bottom:1rpx #ccc solid">
+        <div class="picker">
+          <label class="icon-name fs34 ">分类</label>
+		  <select class="col0 fs34 sel" style="display:block">
+		   <option>字画</option>
+		   <option>书法</option>
+		   <option>瓷器</option>
+		  </select>
+        </div>
+     </div>
+
+	 <div class="ibox-content bgf mb36">
+      <label class="icon-name fs34">存放位置</label>
+      <input placeholder="请输入藏品存放位置" name="goodsPosition" maxlength="50"  placeholder-class="placeholder-input"/>
+    </div>
+
+    <div class="ibox-content bgf mb36">
+      <div class="mb24">
+        <label class="fs34">备注信息</label>
+      </div>
+      <div class="textarea-row">
+        <textarea placeholder="请输入备注信息" name="goodsInfo" maxlength="200" class="content"  placeholder-class="placeholder-input"></textarea>
+      </div>
+    </div>
+
+    <div class="ibox-content bgf mb36">
+      <img src='images/icon_01.png' class="up-icon" mode='aspectFit' bindtap="chooseImg"/>
+    </div>
+
+    <div class="ibox-content-1">
+      <button  type="submit" class="btn">保存</button>
+    </div>
+	  </form>
+	  </div>
+	</div>
+   </div>
+ </body>
+</html>

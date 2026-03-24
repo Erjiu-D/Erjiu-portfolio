@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>登录</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="css/login1.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="md5.js"></script>
+ </head>
+ <body>
+  
+  <div class="container">
+  <div class="login-content">
+    <img src="images/bg_img.jpg"/>
+    <div class="logo-row">
+      <img src="images/logo.png" class="logo-img" mode="widthFix"/>
+      <div class="login-wrap">
+          <div class="input-row">
+            <input  maxlength="11" type="number" placeholder-class="placeholder-input" placeholder="手机号" id="phone" class="form-control"></input>
+          </div>
+          <div class="input-row">
+            <input bindinput="password" maxlength="16" password id="passworld" placeholder-class="placeholder-input" placeholder="密码" class="form-control"></input>
+          </div>
+          <div class="ibox-content">
+            <button style="color: white; background-color: #09bb07;width:200px;height:50px;" hover-class="hover-login-btn" onclick="login()">登录</button>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+ </body>
+</html>
+<script type="text/javascript">
+ function login()
+ {
+   var phone=document.getElementById("phone").value;
+   var password=document.getElementById("passworld").value;
+   var ts = Date.parse(new Date().toUTCString()) / 1000;
+   var sign = hexMD5(phone + password+ts);
+   var data=
+   $.ajax({
+            type : "POST",
+            url : "http://localhost/collect/public/index.php/index/user/login",
+            data :{'account':phone,'password':password,'ts':ts,'sign':sign},
+			header: {
+             'content-type': 'application/json' // 默认值
+            },
+            success : function(data) {
+             if(data.code==200)
+			 {
+               window.location.href="index.html";
+			 }
+			 else
+			 {
+                alert(data.info);
+			 }
+            },
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+
+ }
+</script>

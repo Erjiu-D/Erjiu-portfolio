@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>登录</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="css/login1.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="md5.js"></script>
+ </head>
+ <body>
+  <div id="app">
+  <div class="container" >
+  <div class="login-content">
+    <img src="images/bg_img.jpg"/>
+    <div class="logo-row">
+      <img src="images/logo.png" class="logo-img" mode="widthFix"/>
+      <div class="login-wrap">
+          <div class="input-row">
+             <label> {{time}}</label>
+
+          </div>
+          <div class="input-row">
+            <input   placeholder-class="placeholder-input" placeholder="手机号" id="phone" class="form-control"  v-model="email"></input>
+          </div>
+          <div class="input-row">
+            <input bindinput="password" maxlength="16" password id="passworld" placeholder-class="placeholder-input" placeholder="密码" class="form-control" v-model="password"></input>
+          </div>
+          <div class="ibox-content">
+            <button style="color: white; background-color: #09bb07;width:200px;height:50px;" hover-class="hover-login-btn"  @click="post()">登录</button>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+  </div>
+ </body>
+<script src="vue.min.js"></script>
+</html>
+<script type="text/javascript">
+ var vm=new Vue({
+     el:'#app',
+     data:{
+         email:'123',
+         password:'123',
+         time:'123',
+     },
+     mounted:function()  {
+
+
+     },
+     methods:{
+         post:function () {
+          $.ajax({
+              type:"POST",
+              url:"http://localhost/test/public/login",
+              data :{'email':vm.email,'password':vm.password},
+              header: {
+                  'content-type': 'application/json' // 默认值
+              },
+              success:function (data1) {
+                  //console.log(vm.email);
+                  var data2=JSON.parse(data1);
+                //console.log(data1);
+                //console.log(data2['Status Code']);
+                if(data2['Status Code']==200)
+                {
+                    //window.location.href="www.baidu.com";
+                    sessionStorage.setItem('token',data2.Body.data.token);
+                }
+                else
+                    alert(data2.Body.msg);
+              }
+          });
+         }
+     }
+ });
+ setInterval(gettime,1000);
+ function gettime() {
+     $.ajax({
+         type:"GET",
+         url:"http://localhost/test/public/datetime?token="+sessionStorage.getItem('token'),
+         //data :{'email':vm.email,'password':vm.password},
+         header: {
+             'content-type': 'application/json' // 默认值
+         },
+         success:function (data1) {
+             console.log(data1);
+             var data2=JSON.parse(data1);
+             if(data2['Status Code']==200)
+             {
+                 vm.time=data2.Body.data.datetime;
+             }
+         }
+     });
+ }
+</script>

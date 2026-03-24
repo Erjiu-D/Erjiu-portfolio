@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>添加管理员</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="css/adduser.css">
+ </head>
+ <body>
+  <div class="container bgf5f8fa">
+   <div class="container1 bgf5f8fa">
+
+     <div class="ibox-title-2">
+      <label class="fs28 col8">请输入管理员的相关信息</label>
+     </div>
+     
+	 <form >
+    <div class="ibox-content bgf" style="border-bottom:1rpx #ccc solid">
+      <label class="icon-name fs34">用户名</label>
+      <input placeholder="请输入用户名" name="userName" maxlength="20" placeholder-class="placeholder-input"/>
+    </div>
+    <div class="ibox-content bgf mb36">
+        <div class="picker">
+          <label class="icon-name fs34">性别</label>
+        </div>
+    </div>
+    <div class="ibox-content bgf mb36">
+      <label class="icon-name fs34">手机号</label>
+      <input bindinput="phone" maxlength="11" type="number" placeholder-class="placeholder-input" placeholder="请输入管理员手机号" name="phone"></input>
+    </div>
+    <div class="ibox-content bgf" style="border-bottom:1px #ccc solid">
+        <label class="icon-name fs34">密码</label>
+        <input placeholder="请输入密码" password name="password" maxlength="16" placeholder-class="placeholder-input"/>
+      </div>
+      <div class="ibox-content bgf">
+        <label class="icon-name fs34">确认密码</label>
+        <input placeholder="请再次输入密码" password name="confirm" maxlength="16" placeholder-class="placeholder-input"/>
+      </div>
+      <div class="ibox-content">
+        <label class="fs34">密码必须是6至16位字母或数字组合</label>
+      </div>
+    <div class="ibox-content">
+      <button style="opacity: {{opacity}};color: white; background-color: #09bb07;" disabled="{{disabled}}" class="marginview btnn" form-type="submit" open-type="getUserInfo">保存</button>
+    </div>
+  </form>
+
+
+   </div>
+  </div>
+ </body>
+</html>

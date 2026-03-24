@@ -1,0 +1,14 @@
+﻿.container{min-height: 100%;}
+.log-list-icon{
+  display: inline-block;
+  width: 18rpx;
+  height: 18rpx;
+  vertical-align: middle;
+  }
+  .log-time{line-height: 34rpx;}
+
+.container1{
+ width:60%;
+ position:relative;
+ margin:0 auto;
+}
