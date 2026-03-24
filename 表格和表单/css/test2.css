@@ -1,0 +1,72 @@
+	html {
+		width: 100%;
+		height: 100%;
+	}
+
+	body {
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/bg.jpg);
+	}
+
+	caption {
+		background-color: azure;
+		border: 1px solid black;
+		border-bottom: 0px;
+		border-radius: 5px;
+	}
+
+	table {
+		font-size: 20px;
+		font-family: 宋体;
+		color: cornflowerblue;
+		border: 1px solid black;
+		border-radius: 5px;
+		width: 600px;
+		background-color: azure;
+	}
+
+	tr {
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+
+	td {
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+
+	.son1 {
+		text-align: left;
+	}
+
+	.son2 {
+		width: 100px;
+		text-align: center;
+	}
+
+	.son3 {
+		height: 20px;
+		width: 450px;
+	}
+
+	input[type="text"] {
+		height: 20px;
+		width: 460px;
+		border: none;
+		outline: none;
+		background-color: azure;
+	}
+	textarea{
+		border: none;
+		outline: none;
+		background-color: azure;
+	}
+	select{
+		border: none;
+		outline: none;
+		background-color: azure;
+	}
+	.noneTr {
+		border: none;
+	}
