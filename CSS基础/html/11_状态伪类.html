@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>状态伪类</title>
+	</head>
+	<style>
+		input[type="text"]:enabled {
+			background: #66ccff;
+		}
+
+		input[type="text"]:disabled {
+			background: red;
+		}
+		.change{
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			background-color: azure;
+			font-size: 25px;
+			line-height: 200px;
+		}
+		.change:hover{
+			width: 500px;
+			height: 500px;
+			background-color: #66ccff;
+			text-align: center;
+			line-height: 500px;
+			font-family: 宋体;
+			color: red;
+		}
+	</style>
+	<link rel="stylesheet" href="../css/base.css" type="text/css">
+	<body>
+		<a href="../index.html"><div class="home">主页</div></a>
+		<h1>状态伪类</h1>
+		<div>
+			<p>enabled:选择每个已启用的 &lt;input&gt;元素。</p>
+			<p>disabled:选择每个被禁用的 &lt;input&gt;元素。</p>
+			<form action="">
+				贵姓: <input type="text" value="Dyong" /><br>
+				名字: <input type="text" value="Lu" /><br>
+				不可用: <input type="text" disabled="disabled" value="JiNiTaiMei" /><br>
+			</form>
+		</div>
+		<div class="change">
+			<p>把鼠标放上来</p>
+		</div>
+	</body>
+</html>

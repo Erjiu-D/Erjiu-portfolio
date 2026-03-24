@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性选择器</title>
+	</head>
+	<style>
+		/* [title="abcd"]
+		{
+			color: #6cf;
+		} 全部*/
+		/* [title^="a"]{
+			color: #6cf;
+		} 首字母*/
+		/* [title$="d"] {
+			color: #6cf;
+		} 尾字母*/
+		[title*="e"]{
+			color: #6cf;
+		}//带E的
+	</style>
+	<link rel="stylesheet" href="../css/base.css" type="text/css">
+	<body>
+	<a href="../index.html"><div class="home">主页</div></a>
+		<p title="abcd">Ecstatic</p>
+		<p title="abcc">FAIRY TAIL</p>
+		<p title="abce">Last if the Wilds</p>
+		<p title="bbcd">Vakning ao elska</p>
+		<p title="abcd">Jackpot</p>
+	</body>
+</html>

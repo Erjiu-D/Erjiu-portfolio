@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性容器</title>
+	</head>
+	<style>
+		.father {
+			width: 500px;
+			height: 500px;
+			background-color: #6680ff;
+			display: flex;
+			/* 指定弹性容器中弹性元素的排列方向 默认值row */
+			flex-direction: row;
+			/* 是否换行 默认值：wrap */
+			flex-wrap: wrap;
+			/* 主轴方向上元素排列方式 */
+			justify-content: flex-start;
+			/* 辅轴上元素对齐方式 多行 */
+			align-content: flex-start;
+			align-content: flex-end;
+			align-content: space-around;
+		}
+
+		div {
+			width: 200px;
+			height: 100px;
+		}
+
+		.son1 {
+			height: 140px;
+			background-color: #66ffe6;
+		}
+		.son2{
+			background-color: #66ccff;
+		}
+		.son3{
+			background-color: blue
+		}
+	</style>
+	<body>
+		<div class="father">
+			<div class="son1"></div>
+			<div class="son2"></div>
+			<div class="son3"></div>
+		</div>
+	</body>
+</html>
